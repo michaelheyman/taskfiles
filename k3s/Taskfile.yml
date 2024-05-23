@@ -1,0 +1,18 @@
+version: "3"
+
+tasks:
+  install:
+    desc: Install k3s
+    summary: Install k3s as described in https://docs.k3s.io/quick-start
+    cmds:
+      - curl -sfL https://get.k3s.io | sh -
+      # - export KUBECONFIG=$HOME/.kube/config
+        # - mkdir ~/.kube 2> /dev/null
+      - "sudo k3s kubectl config view --raw > $HOME/.kube/config"
+      - kubectl config view
+
+  destroy:
+    desc: Destroy k3s
+    summary: Uninstall k3s as described in https://docs.k3s.io/installation/uninstall
+    cmds:
+      - /usr/local/bin/k3s-uninstall.sh
