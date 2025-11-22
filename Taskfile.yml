@@ -1,8 +1,20 @@
 version: '3'
 
-tasks:
-  hello:
-    silent: true
-    cmds:
-      - echo "Hello from the remote Taskfile!"
+includes:
+  markdown:
+    taskfile: ./markdown/Taskfile.yml
+    aliases:
+      - md
+    vars:
+      MARKDOWN_FILES: README.md
 
+tasks:
+  default:
+    desc: default task
+    cmds:
+      - task --list
+
+  lint:
+    desc: Lint README
+    cmds:
+      - task: md:lint
