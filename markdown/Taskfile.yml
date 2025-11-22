@@ -7,9 +7,7 @@ tasks:
       - sh: which npx
         msg: "npx is not installed. Please install Node.js from https://nodejs.org/"
     cmds:
-      - npx -y markdownlint-cli2 --fix {{.MARKDOWN_FILES}}
-    requires:
-      vars: [MARKDOWN_FILES]
+      - npx -y markdownlint-cli2 --fix {{.MARKDOWN_FILES | default "README.md" }}
 
   format:
     desc: Format markdown files
@@ -17,6 +15,4 @@ tasks:
       - sh: which npx
         msg: "npx is not installed. Please install Node.js from https://nodejs.org/"
     cmds:
-      - npx --yes doctoc --github {{.MARKDOWN_FILES}}
-    requires:
-      vars: [MARKDOWN_FILES]
+      - npx --yes doctoc --github {{.MARKDOWN_FILES | default "README.md" }}
