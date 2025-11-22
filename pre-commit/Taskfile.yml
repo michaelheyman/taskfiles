@@ -1,0 +1,21 @@
+version: "3"
+
+tasks:
+  install:
+    desc: Install pre-commit hooks
+    preconditions:
+      - sh: which pre-commit
+        msg: "pre-commit is not installed. Please install it from https://pre-commit.com/#install"
+    cmds:
+      - pre-commit install
+      - pre-commit install --hook-type {{.HOOK_TYPES}}
+    requires:
+      vars: [HOOK_TYPES]
+
+  run:
+    desc: Run pre-commit hooks against all files
+    preconditions:
+      - sh: which pre-commit
+        msg: "pre-commit is not installed. Please install it from https://pre-commit.com/#install"
+    cmds:
+      - pre-commit run --all-files 
