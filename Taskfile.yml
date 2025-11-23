@@ -1,12 +1,11 @@
 version: '3'
-
 includes:
   markdown:
     taskfile: ./markdown/Taskfile.yml
     aliases:
       - md
-    vars:
-      MARKDOWN_FILES: README.md
+  yaml:
+    taskfile: ./yaml/Taskfile.yml
 
 tasks:
   default:
@@ -18,3 +17,8 @@ tasks:
     desc: Lint README
     cmds:
       - task: md:lint
+
+  fmt:
+    desc: Format files
+    cmds:
+      - task: yaml:format
