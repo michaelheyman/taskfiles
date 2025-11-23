@@ -1,0 +1,10 @@
+version: "3"
+
+tasks:
+  format:
+    desc: Format YAML files
+    preconditions:
+      - sh: which go
+        msg: "go is not installed. Please install go from https://go.dev/doc/install"
+    cmds:
+      - go run github.com/google/yamlfmt/cmd/yamlfmt@v0 -formatter retain_line_breaks=true {{.GLOB | default "." }}

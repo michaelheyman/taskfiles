@@ -41,8 +41,8 @@ includes:
     taskfile: git@github.com:michaelheyman/taskfiles.git//markdown/Taskfile.yml?ref=main
   pre-commit:
     taskfile: git@github.com:michaelheyman/taskfiles.git//pre-commit/Taskfile.yml?ref=main
-    vars:
-      HOOK_TYPES: pre-push
+  yaml:
+    taskfile: git@github.com:michaelheyman/taskfiles.git//yaml/Taskfile.yml?ref=main
 ```
 
 ### Git over HTTP
@@ -61,4 +61,6 @@ includes:
     taskfile: https://github.com/michaelheyman/taskfiles.git//markdown/Taskfile.yml?ref=main
   pre-commit:
     taskfile: https://github.com/michaelheyman/taskfiles.git//pre-commit/Taskfile.yml?ref=main
+  yaml:
+    taskfile: https://github.com/michaelheyman/taskfiles.git//yaml/Taskfile.yml?ref=main
 ```
