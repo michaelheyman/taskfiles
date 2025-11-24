@@ -1,0 +1,18 @@
+version: "3"
+
+tasks:
+  format:
+    desc: Format Terraform files
+    preconditions:
+      - sh: which terraform
+        msg: "terraform is not installed. Please install terraform from https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli"
+    cmds:
+      - terraform fmt --recursive
+
+  lint:
+    desc: Lint Terraform files
+    preconditions:
+      - sh: which tflint
+        msg: "tflint is not installed. Please install tflint from https://github.com/terraform-linters/tflint"
+    cmds:
+      - tflint --recursive

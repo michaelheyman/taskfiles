@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 includes:
   markdown:
     taskfile: ./markdown/Taskfile.yml
