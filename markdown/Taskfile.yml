@@ -7,7 +7,7 @@ tasks:
       - sh: which npx
         msg: "npx is not installed. Please install Node.js from https://nodejs.org/"
     cmds:
-      - npx -y markdownlint-cli2 --fix {{.MARKDOWN_FILES | default "README.md" }}
+      - npx --yes markdownlint-cli2 --fix {{.MARKDOWN_FILES | default "README.md" }}
 
   format:
     desc: Format markdown files

@@ -41,6 +41,8 @@ includes:
     taskfile: git@github.com:michaelheyman/taskfiles.git//markdown/Taskfile.yml?ref=main
   pre-commit:
     taskfile: git@github.com:michaelheyman/taskfiles.git//pre-commit/Taskfile.yml?ref=main
+  renovate:
+    taskfile: git@github.com:michaelheyman/taskfiles.git//renovate/Taskfile.yml?ref=main
   terraform:
     taskfile: git@github.com:michaelheyman/taskfiles.git//terraform/Taskfile.yml?ref=main
   yaml:
@@ -63,6 +65,8 @@ includes:
     taskfile: https://github.com/michaelheyman/taskfiles.git//markdown/Taskfile.yml?ref=main
   pre-commit:
     taskfile: https://github.com/michaelheyman/taskfiles.git//pre-commit/Taskfile.yml?ref=main
+  renovate:
+    taskfile: https://github.com/michaelheyman/taskfiles.git//renovate/Taskfile.yml?ref=main
   terraform:
     taskfile: https://github.com/michaelheyman/taskfiles.git//terraform/Taskfile.yml?ref=main
   yaml:
