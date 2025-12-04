@@ -1,0 +1,10 @@
+version: "3"
+
+tasks:
+  validate:
+    desc: Validate Renovate config
+    preconditions:
+      - sh: which npx
+        msg: "npx is not installed. Please install Node.js from https://nodejs.org/"
+    cmds:
+      - npx --yes renovate --platform=local
